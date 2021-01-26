@@ -1,3 +1,4 @@
+
 #include "boardtype_friendlyelec.h"
 #include <ctype.h>
 
@@ -59,8 +60,9 @@ BoardHardwareInfo gAllBoardHardwareInfo[] = {
 
     // a64
     // {"sun50iw1p1", 0, NanoPi_A64, "NanoPi-A64", "0"},
-    
+
     // armbian+Neo2
+    {"sun50iw1p1", 4, NanoPi_NEO_Core2, "NanoPi-NEO-Core2", "0(0)"},
     {"sun50iw1p1", 4, NanoPi_NEO2, "NanoPi-NEO2", "1(0)"},
 
     //allwinner h5
@@ -71,7 +73,7 @@ BoardHardwareInfo gAllBoardHardwareInfo[] = {
     {"sun50iw2", 4, NanoPi_NEO_Core2, "NanoPi-NEO-Core2", "0(0)"},
     {"sun50iw2", 4, NanoPi_K1_Plus,   "NanoPi-K1-Plus",   "4(0)"},
 
-    // kernel 4.x
+        // kernel 4.x
     {"Allwinnersun50iw2Family", 4, NanoPi_NEO2,      "NanoPi-NEO2",      "1(0)"},
     {"Allwinnersun50iw2Family", 4, NanoPi_M1_Plus2,  "NanoPi-M1-Plus2",  "3(0)"},
     {"Allwinnersun50iw2Family", 4, NanoPi_NEO_Plus2, "NanoPi-NEO-Plus2", "2(0)"},
@@ -148,7 +150,6 @@ static int getFieldValueInCpuInfo(char* hardware, int hardwareMaxLen, char* revi
     return isGotHardware + isGotRevision;
 }
 
-
 static int getAllwinnerBoardID(char* boardId, int boardIdMaxLen )
 {
     unsigned long n, i, j;
@@ -191,7 +192,7 @@ static int getAllwinnerBoardID(char* boardId, int boardIdMaxLen )
                             break;
                         }
                     }
-                }  
+                }
             }
         }
     }
@@ -237,9 +238,9 @@ int getBoardType(BoardHardwareInfo** retBoardInfo) {
         return -1;
     }
 
-    // h3 and h5, check hardware and boardid
+        // h3 and h5, check hardware and boardid
     if (strncasecmp(hardware, h3, strlen(h3)) == 0 || strncasecmp(hardware, h5, strlen(h5)) == 0
-        || strncasecmp(hardware, h3_kernel4, strlen(h3_kernel4)) == 0 || strncasecmp(hardware, h5_kernel4, strlen(h5_kernel4)) == 0) {
+        || strncasecmp(hardware, h3_kernel4, strlen(h3_kernel4)) == 0 || strncasecmp(hardware, h5_kernel4, strlen(h5_kernel4)) == 0$
         int ret = getAllwinnerBoardID(allwinnerBoardID, sizeof(allwinnerBoardID));
         if (ret == 0) {
             //LOGD("got boardid: %s\n", allwinnerBoardID);
