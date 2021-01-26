@@ -240,7 +240,7 @@ int getBoardType(BoardHardwareInfo** retBoardInfo) {
 
         // h3 and h5, check hardware and boardid
     if (strncasecmp(hardware, h3, strlen(h3)) == 0 || strncasecmp(hardware, h5, strlen(h5)) == 0
-        || strncasecmp(hardware, h3_kernel4, strlen(h3_kernel4)) == 0 || strncasecmp(hardware, h5_kernel4, strlen(h5_kernel4)) == 0$
+        || strncasecmp(hardware, h3_kernel4, strlen(h3_kernel4)) == 0 || strncasecmp(hardware, h5_kernel4, strlen(h5_kernel4)) == 0) {
         int ret = getAllwinnerBoardID(allwinnerBoardID, sizeof(allwinnerBoardID));
         if (ret == 0) {
             //LOGD("got boardid: %s\n", allwinnerBoardID);
