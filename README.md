@@ -1,5 +1,5 @@
 # WiringNP
-This is a GPIO access library for NanoPi. It is based on the WiringOP for Orange PI which is based on original WiringPi for Raspberry Pi.
+This is based on a GPIO access library for NanoPi and explicitely supports NanoPi NEO Core2 on Armbian. It is based on the WiringOP for Orange PI which is based on original WiringPi for Raspberry Pi.
 
 Currently supported boards:  
 NanoPi Neo  
@@ -15,6 +15,40 @@ NanoPi NEO Core2
 NanoPi K1 Plus  
 NanoPC T3  
   
+These changes in this fork support nanoPi-NEO-Core2 running Armbian buster version 20.11.6. It may cause issues with NanoPi_NEO2.
+
+**cat /proc/cpuinfo:**
+```
+processor       : 0
+Processor       : AArch64 Processor rev 4 (aarch64)
+Hardware        : sun50iw1p1
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid
+CPU implementer : 0x41
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0xd03
+CPU revision    : 4
+```
+
+**cat /etc/armbian-release:**
+```
+BOARD=nanopineocore2
+BOARD_NAME="NanoPi Neo Core 2"
+BOARDFAMILY=sun50iw2
+BUILD_REPOSITORY_URL=https://github.com/armbian/build
+BUILD_REPOSITORY_COMMIT=fef01045-dirty
+DISTRIBUTION_CODENAME=buster
+DISTRIBUTION_STATUS=supported
+VERSION=20.11.6
+LINUXFAMILY=sunxi64
+BRANCH=current
+ARCH=arm64
+IMAGE_TYPE=stable
+BOARD_TYPE=conf
+INITRD_ARCH=arm64
+KERNEL_IMAGE_TYPE=Image
+```
 # Installation
 
 ## Install WiringNP 
