@@ -15,7 +15,7 @@ NanoPi NEO Core2
 NanoPi K1 Plus  
 NanoPC T3  
   
-These changes in this fork support nanoPi-NEO-Core2 running Armbian buster version 20.11.6. It may cause issues with NanoPi_NEO2.
+Changes in this fork support nanoPi-NEO-Core2 running Armbian buster version 20.11.6. It may cause issues with NanoPi_NEO2.
 
 **cat /proc/cpuinfo:**
 ```
